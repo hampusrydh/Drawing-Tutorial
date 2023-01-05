@@ -1,17 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  transition: 2s;
 }
 
 :root {
   --header-spacing: calc(10px + 2vh - 1vw);
   --h1-size: calc(4vh - 1vw + 20px);
   --navbar-box-size: calc(12px + 2vh);
-  --color-background: rgb(44, 35, 71);
+  --color-background: rgb(20, 15, 45);
   --color-main: rgb(0, 0, 0);
-  --color-secondary: rgb(105, 29, 145);
+  --color-secondary: rgb(59, 35, 130);
   --color-text: rgb(152, 163, 227);
   --color-special: rgb(255, 175, 78);
+  --color-visited: rgb(255, 255, 255);
   background-color: var(--color-special);
 }
 
@@ -21,6 +23,28 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   min-height: 100vh;
+}
+/**
+**/
+
+p {
+  color: var(--color-text);
+}
+
+a:link {
+  color: var(--color-special);
+}
+
+a:visited {
+  color: var(--color-visited);
+}
+
+a:hover {
+  color: var(--color-text);
+}
+
+a:active {
+  color: var(--color-special);
 }
 
 /**
@@ -33,6 +57,7 @@ header {
   height: fit-content;
   padding: var(--header-spacing);
   transition: 0.5s;
+  border-bottom: 5px solid var(--color-special);
 }
 
 h1 {
@@ -66,10 +91,31 @@ nav a {
   font-size: var(--navbar-box-size);
   padding: calc(var(--navbar-box-size) * 0.3);
   border-radius: 8px;
+  transition: 0.5s;
+}
+
+nav a:any-link {
+  color: var(--color-secondary);
+}
+
+nav a:hover {
+  background-color: white;
+  color: var(--color-main);
+  transform: scale(1.2);
+}
+
+nav a:active {
+  background-color: var(--color-main);
+  color: var(--color-special);
+  transform: scale(0.9);
 }
 
 .current_page {
-  background-color: var(--color-background);
+  background-color: var(--color-main);
+}
+
+.current_page:any-link:not(:hover) {
+  color: var(--color-special);
 }
 
 /**
@@ -83,6 +129,7 @@ section {
   margin: auto;
   margin-top: 4vh;
   margin-bottom: 6vh;
+  border: 5px solid var(--color-secondary);
 }
 
 section article {
