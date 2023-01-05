@@ -5,20 +5,30 @@
 
 :root {
   --header-spacing: calc(10px + 2vh - 1vw);
-  --navbar-box-size: calc(10px + 1vw + 1vh);
+  --h1-size: calc(4vh - 1vw + 20px);
+  --navbar-box-size: calc(12px + 2vh);
+  --color-background: rgb(44, 35, 71);
+  --color-main: rgb(0, 0, 0);
+  --color-secondary: rgb(105, 29, 145);
+  --color-text: rgb(152, 163, 227);
+  --color-special: rgb(255, 175, 78);
+  background-color: var(--color-special);
 }
 
-@media screen and (max-width: 768px) {
-  :root {
-    --header-spacing: calc(10px + 2vh - 1vw);
-    --navbar-box-size: calc(10px + 1vh + 1vw);
-    background-color: red;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
 }
 
+/**
+**/
 header {
-  position: relative;
-  background-color: antiquewhite;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-main);
   width: calc(var(--header-spacing) * var(--header-spacing));
   height: fit-content;
   padding: var(--header-spacing);
@@ -26,33 +36,70 @@ header {
 }
 
 h1 {
-  background-color: red;
-  font-size: calc(5vh - 1vw + 20px);
+  font-size: var(--h1-size);
   width: fit-content;
   margin: auto;
   margin-top: var(--header-spacing);
   padding: 5px;
+  color: var(--color-special);
 }
 
+/**
+**/
 nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* column-gap: 50px; */
 
-  background-color: rgb(32, 146, 185);
+  background-color: var(--color-secondary);
 
   width: 90%;
-  height: calc(5vh + 40px);
+  height: calc(2 * var(--navbar-box-size));
 
   margin: var(--header-spacing) auto 0;
-  padding: 10px;
+  padding: calc(var(--navbar-box-size) / 4);
 }
 
-nav div {
-  background-color: rgb(141, 255, 232);
+nav a {
+  background-color: var(--color-text);
   text-align: center;
   font-size: var(--navbar-box-size);
   padding: calc(var(--navbar-box-size) * 0.3);
   border-radius: 8px;
+}
+
+.current_page {
+  background-color: var(--color-background);
+}
+
+/**
+**/
+section {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-main);
+  width: 80%;
+  margin: auto;
+  margin-top: 4vh;
+  margin-bottom: 6vh;
+}
+
+section article {
+  background-color: var(--color-secondary);
+  margin: 20px;
+}
+
+/**
+**/
+footer {
+  background-color: var(--color-secondary);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --header-spacing: calc(1px + 3vh - 1vw);
+    --h1-size: calc(3vh - 1vw + 20px);
+    --navbar-box-size: calc(7px + 1vw + 1vh);
+  }
 }
