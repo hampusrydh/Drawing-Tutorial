@@ -1,7 +1,11 @@
+/*
+Main things
+*/
+
 * {
   margin: 0;
   padding: 0;
-  transition: 2s;
+  transition: 1s;
 }
 
 :root {
@@ -10,22 +14,27 @@
   --navbar-box-size: calc(12px + 2vh);
   --color-background: rgb(20, 15, 45);
   --color-main: rgb(0, 0, 0);
-  --color-secondary: rgb(59, 35, 130);
+  --color-secondary: rgb(63, 35, 115);
   --color-text: rgb(152, 163, 227);
   --color-special: rgb(255, 175, 78);
   --color-visited: rgb(255, 255, 255);
+
   background-color: var(--color-special);
 }
 
 body {
   display: flex;
   flex-direction: column;
+
   background-color: var(--color-background);
-  color: var(--color-text);
   min-height: 100vh;
+
+  color: var(--color-text);
 }
-/**
-**/
+
+/*
+Default styling across pages for things like text
+*/
 
 p {
   color: var(--color-text);
@@ -47,50 +56,119 @@ a:active {
   color: var(--color-special);
 }
 
-/**
-**/
+/*
+Header styling
+*/
+
 header {
   position: sticky;
   top: 0;
+
   background-color: var(--color-main);
   width: calc(var(--header-spacing) * var(--header-spacing));
   height: fit-content;
+
   padding: var(--header-spacing);
-  transition: 0.5s;
-  border-bottom: 5px solid var(--color-special);
+  border-bottom: 5px solid var(--color-secondary);
 }
 
 h1 {
-  font-size: var(--h1-size);
-  width: fit-content;
   margin: auto;
   margin-top: var(--header-spacing);
-  padding: 5px;
+
   color: var(--color-special);
+  width: fit-content;
+  font-size: var(--h1-size);
+
+  padding: 5px;
+
+  animation: h1-fire 2s linear infinite;
 }
 
-/**
-**/
+@keyframes h1-fire {
+  0% {
+    text-shadow: -2px -2px 1px rgba(255, 0, 0, 1),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+
+  10% {
+    text-shadow: -2px -2px 2px rgba(255, 0, 0, 0.9),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  20% {
+    text-shadow: -2px -3px 3px rgba(255, 0, 0, 0.8),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  30% {
+    text-shadow: -2px -4px 2px rgba(255, 0, 0, 0.7),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  40% {
+    text-shadow: -2px -6px 2px rgba(255, 0, 0, 0.9),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  50% {
+    text-shadow: -2px -8px 3px rgba(255, 0, 0, 0.6),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  60% {
+    text-shadow: -2px -9px 3px rgba(255, 0, 0, 0.4),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  70% {
+    text-shadow: -2px -11px 3px rgba(255, 0, 0, 0.3),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  80% {
+    text-shadow: -2px -12px 3px rgba(255, 0, 0, 0.2),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  90% {
+    text-shadow: -2px -14px 3px rgba(255, 0, 0, 0.1),
+      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+}
+
+/*
+Navbar styling (technically included in header)
+*/
 nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
-  background-color: var(--color-secondary);
+  margin: var(--header-spacing) auto 0;
 
+  background-color: var(--color-secondary);
   width: 90%;
   height: calc(2 * var(--navbar-box-size));
 
-  margin: var(--header-spacing) auto 0;
+  border: 7px ridge var(--color-special);
+  border-radius: 3px;
   padding: calc(var(--navbar-box-size) / 4);
+
+  box-shadow: inset 0px 0px 10px 5px rgba(30, 20, 100, 0.541);
 }
 
 nav a {
-  background-color: var(--color-text);
   text-align: center;
+
+  background-color: var(--color-text);
   font-size: var(--navbar-box-size);
+
   padding: calc(var(--navbar-box-size) * 0.3);
   border-radius: 8px;
+
   transition: 0.5s;
 }
 
@@ -98,7 +176,7 @@ nav a:any-link {
   color: var(--color-secondary);
 }
 
-nav a:hover {
+nav a:not(.current_page):not(:active):hover {
   background-color: white;
   color: var(--color-main);
   transform: scale(1.2);
@@ -108,6 +186,8 @@ nav a:active {
   background-color: var(--color-main);
   color: var(--color-special);
   transform: scale(0.9);
+
+  transition: 0.2s;
 }
 
 .current_page {
@@ -118,35 +198,48 @@ nav a:active {
   color: var(--color-special);
 }
 
-/**
-**/
+/*
+Main section styling
+*/
 section {
   display: flex;
   flex-direction: column;
 
-  background-color: var(--color-main);
-  width: 80%;
   margin: auto;
   margin-top: 4vh;
   margin-bottom: 6vh;
+
+  background-color: var(--color-main);
+  width: 80%;
+
   border: 5px solid var(--color-secondary);
 }
 
 section article {
-  background-color: var(--color-secondary);
   margin: 20px;
+
+  background-color: var(--color-secondary);
 }
 
-/**
-**/
+/*
+Footer styling
+*/
 footer {
   background-color: var(--color-secondary);
 }
+
+/*
+Media queries for device width 
+*/
 
 @media screen and (max-width: 768px) {
   :root {
     --header-spacing: calc(1px + 3vh - 1vw);
     --h1-size: calc(3vh - 1vw + 20px);
     --navbar-box-size: calc(7px + 1vw + 1vh);
+  }
+
+  header {
+    top: calc(0px - var(--h1-size) - 4 * var(--header-spacing));
   }
 }
