@@ -5,12 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/346f67ec2f.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Frostburn Arts</title>
   </head>
   <body>
     <header>
       <h1>Frostburn Arts</h1>
-      <nav>
+      <div id="settings" class="dropdown_menu">
+        <i class="fa-solid fa-gear fa-3x"></i>
+        <ul class="golden_frame">
+          <li id="lang-en">English</li>
+          <li id="lang-pt">Português</li>
+          <li id="lang-se">Svenska</li>
+        </ul>
+      </div>
+
+      <div id="nav-visibility-button">
+        <i class="fa-solid fa-caret-up fa-rotate-90 fa-2x"></i>
+      </div>
+
+      <nav class="golden_frame">
         <a href="index.html" class="current_page">home</a>
         <a href="empty.html">news</a>
         <a href="empty.html">commisions</a>
@@ -18,7 +35,7 @@
         <a href="about.html">about</a>
       </nav>
     </header>
-    <section>
+    <main>
       <article>
         <a href="empty.html"><h2>Favorite color test</h2></a>
       </article>
@@ -32,7 +49,15 @@
       <article>moreee</article>
       <article>123123</article>
       <article>I wanna sccrolllll</article>
-    </section>
-    <footer>footer here</footer>
+    </main>
+    <footer>
+      <p>Copyright</p>
+      <p>●</p>
+      <p>Terms of Service</p>
+      <p>●</p>
+      <p>Privacy Policy</p>
+      <p>●</p>
+      <p>Contact</p>
+    </footer>
   </body>
 </html>

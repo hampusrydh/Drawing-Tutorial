@@ -12,9 +12,9 @@ Main things
   --header-spacing: calc(10px + 2vh - 1vw);
   --h1-size: calc(4vh - 1vw + 20px);
   --navbar-box-size: calc(12px + 2vh);
-  --color-background: rgb(20, 15, 45);
+  --color-background: rgb(12, 10, 26);
   --color-main: rgb(0, 0, 0);
-  --color-secondary: rgb(63, 35, 115);
+  --color-secondary: rgb(48, 32, 79);
   --color-text: rgb(152, 163, 227);
   --color-special: rgb(255, 175, 78);
   --color-visited: rgb(255, 255, 255);
@@ -30,6 +30,11 @@ body {
   min-height: 100vh;
 
   color: var(--color-text);
+}
+
+@font-face {
+  font-family: Title-cursive;
+  src: url(fonts/AntaraDistance.ttf);
 }
 
 /*
@@ -56,6 +61,12 @@ a:active {
   color: var(--color-special);
 }
 
+.golden_frame {
+  border: 7px ridge var(--color-special);
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 10px 5px rgba(30, 20, 100, 0.541);
+}
+
 /*
 Header styling
 */
@@ -78,9 +89,10 @@ h1 {
 
   color: var(--color-special);
   width: fit-content;
-  font-size: var(--h1-size);
+  font-size: calc(2 * var(--h1-size));
 
   padding: 5px;
+  font-family: Title-cursive;
 
   animation: h1-fire 2s linear infinite;
 }
@@ -139,9 +151,88 @@ h1 {
   }
 }
 
+#settings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  position: absolute;
+  right: calc(2 * var(--header-spacing));
+  top: calc(3 * var(--header-spacing));
+
+  width: fit-content;
+}
+
+#settings i {
+  font-size: var(--h1-size);
+}
+
+#settings:hover i {
+  transform: rotate(180deg) scale(1.2);
+}
+
+#settings ul {
+  visibility: hidden;
+  background-color: var(--color-secondary);
+  width: 0;
+  margin-top: 5px;
+  margin-right: 20px;
+  color: rgba(0, 0, 0, 0);
+  transition: all 0.2s ease-in-out 0.2s, margin-right 0.2s ease-in-out 0s;
+}
+
+#settings:hover ul {
+  visibility: visible;
+  width: 200px;
+  padding: 10px;
+  padding-left: 70px;
+  margin-top: 15px;
+  margin-right: 0px;
+  transition: all 0.4s ease-in-out, margin-right 0.3s ease-in-out 0.3s;
+}
+
+#settings ul li {
+  visibility: hidden;
+  font-size: 0px;
+  color: var(--color-text);
+  transition: 0.3s ease-in 0s;
+}
+
+#settings:hover ul li {
+  visibility: visible;
+  font-size: 30px;
+  margin: 5px;
+  transition: 0.3s ease-out 0.3s;
+}
+
+#lang-en {
+  list-style-image: url(images/en_language_flag.png);
+}
+
+#lang-pt {
+  list-style-image: url(images/pt_language_flag.png);
+}
+
+#lang-se {
+  list-style-image: url(images/se_language_flag.png);
+}
+
 /*
 Navbar styling (technically included in header)
 */
+#nav-visibility-button {
+  display: none;
+
+  width: fit-content;
+  margin: -5px 0 -2px;
+
+  transition: 0.2s;
+}
+
+#nav-visibility-button:hover {
+  rotate: 90deg;
+}
+
 nav {
   display: flex;
   justify-content: space-evenly;
@@ -153,11 +244,7 @@ nav {
   width: 90%;
   height: calc(2 * var(--navbar-box-size));
 
-  border: 7px ridge var(--color-special);
-  border-radius: 3px;
   padding: calc(var(--navbar-box-size) / 4);
-
-  box-shadow: inset 0px 0px 10px 5px rgba(30, 20, 100, 0.541);
 }
 
 nav a {
@@ -176,11 +263,7 @@ nav a:any-link {
   color: var(--color-secondary);
 }
 
-nav a:not(.current_page):not(:active):hover {
-  background-color: white;
-  color: var(--color-main);
-  transform: scale(1.2);
-}
+/* hover styles in media queries */
 
 nav a:active {
   background-color: var(--color-main);
@@ -194,16 +277,13 @@ nav a:active {
   background-color: var(--color-main);
 }
 
-.current_page:any-link:not(:hover) {
-  color: var(--color-special);
-}
-
 /*
 Main section styling
 */
-section {
+main {
   display: flex;
   flex-direction: column;
+  flex: 1;
 
   margin: auto;
   margin-top: 4vh;
@@ -215,22 +295,44 @@ section {
   border: 5px solid var(--color-secondary);
 }
 
-section article {
+main article {
   margin: 20px;
 
   background-color: var(--color-secondary);
+
+  padding: 10px;
 }
 
 /*
 Footer styling
 */
 footer {
+  display: flex;
+  justify-content: center;
+
   background-color: var(--color-secondary);
+
+  padding: 5vh 0;
+}
+
+footer p {
+  margin: 0.5vw;
 }
 
 /*
 Media queries for device width 
 */
+
+@media screen and (min-width: 768px) {
+  nav a:not(.current_page):not(:active):hover {
+    background-color: white;
+    color: var(--color-main);
+    transform: scale(1.2);
+  }
+  .current_page:any-link:not(:hover) {
+    color: var(--color-special);
+  }
+}
 
 @media screen and (max-width: 768px) {
   :root {
@@ -240,6 +342,30 @@ Media queries for device width
   }
 
   header {
-    top: calc(0px - var(--h1-size) - 4 * var(--header-spacing));
+    top: calc(0px - 2 * var(--h1-size) - 4 * var(--header-spacing));
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --header-spacing: calc(1px + 2vh - 1vw);
+    --h1-size: calc(3vh - 1vw + 8px);
+    --navbar-box-size: calc(4px + 1vw + 1vh);
+  }
+  .golden_frame {
+    border-radius: 1px;
+    border-width: 4px;
+  }
+  nav a {
+    border-radius: 4px;
+  }
+  nav {
+    display: none;
+  }
+  #nav-visibility-button {
+    display: block;
+  }
+  header {
+    top: calc(0px - 2 * var(--h1-size) - 3 * var(--header-spacing));
   }
 }
