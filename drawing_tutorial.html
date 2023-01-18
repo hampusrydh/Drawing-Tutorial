@@ -5,12 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/346f67ec2f.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Frostburn Arts</title>
   </head>
   <body>
     <header>
       <h1>Frostburn Arts</h1>
-      <nav>
+      <div id="settings" class="dropdown_menu">
+        <i class="fa-solid fa-gear fa-3x"></i>
+        <ul class="golden_frame">
+          <li id="lang-en">English</li>
+          <li id="lang-pt">Português</li>
+          <li id="lang-se">Svenska</li>
+        </ul>
+      </div>
+
+      <div id="nav-visibility-button">
+        <i class="fa-solid fa-caret-up fa-rotate-90 fa-2x"></i>
+      </div>
+
+      <nav class="golden_frame">
         <a href="index.html">home</a>
         <a href="empty.html">news</a>
         <a href="empty.html">commisions</a>
@@ -20,6 +37,113 @@
         <a href="about.html">about</a>
       </nav>
     </header>
-    <a href="index.html">BACK</a>
+
+    <main>
+      <article>
+        <h2>Drawing a Realistic Ice Cube</h2>
+        <p>
+          For the purposes of this tutorial, I encourage you to follow my own
+          drawing closely. But if you think you can manage with more freedom,
+          try!
+        </p>
+        <br />
+        <h3>Step 1 - Preparation</h3>
+        <p>
+          This step is often overlooked, even by yours truly, but should at
+          least be given some consideration to avoid disaster. Find some good
+          references, a comfortable location, good lighting and a flat surface
+          without excess dust or breadcrums. Get ready one or a few pieces of
+          paper, pencils of varying hardness, a sharpener and a good eraser. If
+          you only have bad erasers that smudge out everything, just forget it
+          and bring more papers and patience.
+        </p>
+        <br />
+        <h3>Step 2 - Planning and contour</h3>
+        <p>
+          This is the most important step - proceed with caution. Decide where
+          to put the visible corners of the ice cube and
+          <u>carefully</u> mark them out. Trying to keep track of the hidden
+          corners as well could be useful for increased accuracy, but is highly
+          difficult and confusing. As such, I have decided to avoid it. If it
+          looks good, gently draw lines connecting them. If it looks a little
+          off, try first to pinpoint the error and then experiment by slightly
+          adjusting the position of the points until it looks good. If you are
+          having trouble, experiment on another piece of paper, draw out the
+          lines, compare with referneces and consider the possibility that it
+          does in fact not look all that bad.
+        </p>
+        <br />
+        <p>
+          When you draw the lines, you can add the bumps, curves and
+          imperfections characteriztic to the shape of an ice cube immedeately
+          if you wish, rather than doing it later, as it follows what you might
+          expect quite closely. And do not forget to round the corners! The word
+          "ice cube" is misleading.
+        </p>
+        <br />
+        <img src="images/placeholder.png" alt="placeholder image" />
+        <br />
+        <p>
+          Form a few unique areas where the shade, shape or texture will differ
+          notably. Begin with large shapes like the dark areas (often located at
+          the center) and highlights (often going along edges in quite thin
+          strips). Move on to cracks and areas with many things going on. Rather
+          than trying to add small reflective details everywhere, make areas for
+          them and add <u>a few</u> small extra details afterwards.
+        </p>
+        <br />
+        <img src="images/placeholder.png" alt="placeholder image" />
+        <br />
+        <h3>Step 3</h3>
+        <p>Sorry, this part has not yet been added.</p>
+        <br />
+        <h3>Feedback</h3>
+        <form>
+          <label for="rating">How good was this tutorial?</label><br />
+          <input type="range" name="rating" min="1" max="10" /><br /><label
+            for="best-part"
+            >What was the best aspect of it?</label
+          ><br /><input
+            type="radio"
+            id="tips"
+            name="best-part"
+            value="tips"
+          /><label for="tips">tips</label><br /><input
+            type="radio"
+            id="structure"
+            name="best-part"
+            value="structure"
+          /><label for="structure">structure</label><br /><input
+            type="radio"
+            id="images"
+            name="best-part"
+            value="images"
+          /><label for="images">images</label><br />
+          <input type="radio" id="other" name="best-part" value="other" /><label
+            for="other"
+            >other</label
+          >
+          <br /><label for="favorite-element"
+            >What is your favorite element?</label
+          >
+          <br /><input
+            id="favorite-element"
+            name="favorite-element"
+            type="text"
+          />
+          <br /><input type="submit" />
+        </form>
+        <p class="date">Last edited 1/8/2023</p>
+      </article>
+    </main>
+    <footer>
+      <p>Copyright</p>
+      <p>●</p>
+      <p>Terms of Service</p>
+      <p>●</p>
+      <p>Privacy Policy</p>
+      <p>●</p>
+      <p>Contact</p>
+    </footer>
   </body>
 </html>

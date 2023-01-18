@@ -12,12 +12,12 @@ Main things
   --header-spacing: calc(10px + 2vh - 1vw);
   --h1-size: calc(4vh - 1vw + 20px);
   --navbar-box-size: calc(12px + 2vh);
-  --color-background: rgb(12, 10, 26);
+  --color-background: rgb(22, 20, 36);
   --color-main: rgb(0, 0, 0);
   --color-secondary: rgb(48, 32, 79);
   --color-text: rgb(152, 163, 227);
-  --color-special: rgb(255, 175, 78);
-  --color-visited: rgb(255, 255, 255);
+  --color-special: rgb(220, 150, 60);
+  --color-visited: rgb(180, 180, 180);
 
   background-color: var(--color-special);
 }
@@ -41,8 +41,34 @@ body {
 Default styling across pages for things like text
 */
 
-p {
+p,
+label {
+  width: fit-content;
+  margin: auto;
   color: var(--color-text);
+  font-size: calc(1.3vw + 7px);
+}
+
+h2 {
+  font-size: calc(2.2vw + 7px);
+  width: fit-content;
+  margin: 0 auto 10px auto;
+  color: var(--color-special);
+  text-align: center;
+}
+
+h3 {
+  color: var(--color-special);
+  font-size: calc(1.3vw + 7px);
+}
+
+u {
+  font-weight: bold;
+  font-style: italic;
+}
+
+a {
+  transition: 0.2s;
 }
 
 a:link {
@@ -59,6 +85,11 @@ a:hover {
 
 a:active {
   color: var(--color-special);
+}
+
+*::selection {
+  background-color: var(--color-special);
+  color: var(--color-main);
 }
 
 .golden_frame {
@@ -97,56 +128,66 @@ h1 {
   animation: h1-fire 2s linear infinite;
 }
 
+h1::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
 @keyframes h1-fire {
   0% {
     text-shadow: -2px -2px 1px rgba(255, 0, 0, 1),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -6px 3px rgba(255, 100, 0, 0.4), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
 
   10% {
     text-shadow: -2px -2px 2px rgba(255, 0, 0, 0.9),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -7px 3px rgba(255, 200, 0, 0.4), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   20% {
     text-shadow: -2px -3px 3px rgba(255, 0, 0, 0.8),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -7px 3px rgba(255, 100, 0, 0.2), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   30% {
     text-shadow: -2px -4px 2px rgba(255, 0, 0, 0.7),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -8px 3px rgba(255, 100, 0, 0.1), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   40% {
     text-shadow: -2px -6px 2px rgba(255, 0, 0, 0.9),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -9px 3px rgba(255, 200, 0, 0), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   50% {
     text-shadow: -2px -8px 3px rgba(255, 0, 0, 0.6),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -1px 3px rgba(255, 200, 0, 0), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   60% {
     text-shadow: -2px -9px 3px rgba(255, 0, 0, 0.4),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -2px 3px rgba(255, 200, 0, 1), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   70% {
     text-shadow: -2px -11px 3px rgba(255, 0, 0, 0.3),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -2px 3px rgba(255, 100, 0, 1), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   80% {
     text-shadow: -2px -12px 3px rgba(255, 0, 0, 0.2),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -4px 3px rgba(255, 100, 0, 0.9), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
   90% {
     text-shadow: -2px -14px 3px rgba(255, 0, 0, 0.1),
-      -3px 7px 3px rgba(255, 0, 0, 0.142), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      -3px -5px 3px rgba(255, 200, 0, 0.8), 1px -2px 3px rgba(255, 0, 0, 0.142),
+      0px 0px 20px rgb(255, 255, 167);
+  }
+  100% {
+    text-shadow: -2px -14px 3px rgba(255, 0, 0, 0.1),
+      -3px -6px 3px rgba(255, 100, 0, 0.6), 1px -2px 3px rgba(255, 0, 0, 0.142),
       0px 0px 20px rgb(255, 255, 167);
   }
 }
@@ -283,6 +324,7 @@ Main section styling
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 1;
 
   margin: auto;
@@ -298,9 +340,57 @@ main {
 main article {
   margin: 20px;
 
+  width: fit-content;
   background-color: var(--color-secondary);
 
   padding: 10px;
+  border-radius: 2px;
+}
+
+main article h2 {
+  max-width: 67%;
+}
+
+main article h3 {
+  text-align: left;
+}
+
+main article p,
+main article h3,
+main article form label {
+  width: 60vw;
+  margin: 0 2vw;
+}
+
+/*
+Images
+*/
+
+main article img {
+  display: block;
+
+  width: 35vw;
+  margin: auto;
+}
+
+/*
+Labels
+*/
+
+input[type="radio"] + label {
+  margin-left: -1.8vw;
+}
+
+main article input {
+  margin: 0 2vw;
+}
+
+/*
+Dates
+*/
+
+.date {
+  text-align: right;
 }
 
 /*
