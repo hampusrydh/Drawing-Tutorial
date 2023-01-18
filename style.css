@@ -133,6 +133,7 @@ h1::selection {
   color: var(--color-text);
 }
 
+/* Uneccesarily complicated placeholder fire */
 @keyframes h1-fire {
   0% {
     text-shadow: -2px -2px 1px rgba(255, 0, 0, 1),
@@ -296,6 +297,7 @@ nav a {
 
   padding: calc(var(--navbar-box-size) * 0.3);
   border-radius: 8px;
+  text-decoration: none;
 
   transition: 0.5s;
 }
